@@ -1,0 +1,176 @@
+@media(min-width: 700px){
+
+.categories{
+    background-color: rgb(40, 39, 38);
+    background-size: cover; 
+    background-position: center;
+    background-attachment: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    padding-top: 3%;
+    padding-bottom: 7%;
+    margin: 0;
+}
+
+.categories__info__container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    gap: 4rem;
+}
+
+.categories__list{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    gap: 7rem;
+}
+
+.categories__title{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: auto;
+}
+
+.categories__title h2{
+    font-family: "Bebas Neue", sans-serif;
+    font-size: clamp(1rem, 7vw, 3rem);
+    color:rgb(255, 255, 255);
+    text-align: center;
+    text-wrap: nowrap;
+    margin: 0;
+    padding: 0;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0), 
+    0 0 20px rgba(255, 255, 255, 0.308),
+    0 0 30px rgba(255, 255, 255, 0.164);
+}
+
+.category{
+    background-color: rgba(88, 88, 88, 0.678);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: clamp(50px, 50vw, 300px);
+    height: clamp(50px, 50vw, 300px);
+    border-radius: 50%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+    transition: transform 0.3s ease;
+    margin: 0;
+    padding: 2%;
+    gap: 2vw;
+
+    border: 1px solid rgba(255,255,255,.12);           
+    box-shadow:
+    0 2px 6px rgba(0,0,0,.25),                       
+    inset 0 1px 2px rgba(255,255,255,.06);
+}
+
+.category.active{
+    background-color: rgba(75, 75, 75, 0.762);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: clamp(50px, 65vw, 300px);
+    height: 700px;
+    border-radius: 20%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+    transition: transform 0.3s ease;
+    margin: 0;
+    padding: 2%;
+    gap: 2vw;
+    padding: 4%;
+}
+
+.category h3{
+    font-family: "Bebas Neue", sans-serif;
+    font-size: clamp(2.5rem, 4.5vw, 3rem);
+    color:rgb(255, 255, 255);
+    text-align: center;
+    text-wrap: wrap;
+
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.5), 
+    0 0 12px rgba(255, 255, 255, 0.3),
+    0 0 16px rgba(255, 255, 255, 0.2);
+}
+
+.category_paragraph{
+    font-family: "Roboto", sans-serif;
+    display: none;
+    font-size: clamp(1rem, 1.5vw, 3rem);
+    color:rgb(255, 255, 255);
+    text-align: center;
+    text-wrap: wrap;
+}
+
+.category_paragraph.active{
+    display: block;
+}
+
+.category:hover{
+    transform: scale(1.15);
+    background-color: rgba(89, 0, 255, 0.821);
+    box-shadow:
+    0 4px 10px rgba(255, 247, 0, 0.499),        
+    0 0 14px rgba(89, 0, 255, 0.552),      
+    0 0 28px rgba(8, 0, 255, 0.479); 
+}
+
+.category:hover h3{
+    font-family: "Bebas Neue", sans-serif;
+    text-shadow: 
+        0 0 10px rgba(106, 0, 255, 0.9),   
+        0 0 30px rgba(98, 0, 255, 0.5),
+        0 0 40px rgba(111, 0, 255, 0.4);
+    color: rgb(248, 248, 249);
+    
+}
+
+.category button {
+    font-family: 'Press Start 2P', cursive;
+    background-color: rgb(0, 0, 0); 
+    border: 2px solid rgb(115, 0, 255); 
+    color: rgb(255, 255, 255); 
+    font-size: 1.5em;
+    font-weight: bold;
+    padding: 12px 25px; 
+    border-radius: 50px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    transition: background-color 0.3s, transform 0.3s; 
+}
+
+.category button:hover {
+    background-color: rgb(149, 0, 255); 
+    color: rgb(255, 255, 255); 
+    transform: scale(1.1); 
+    border: 2px solid rgb(0, 0, 0)
+}
+
+.category button:active {
+    transform: scale(1); 
+}
+
+.button__wrappet{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap: 5%;
+}
+
+}

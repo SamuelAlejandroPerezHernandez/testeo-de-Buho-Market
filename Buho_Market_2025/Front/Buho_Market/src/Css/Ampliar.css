@@ -1,0 +1,180 @@
+.main__container_pp{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    background: linear-gradient(
+    135deg,
+    rgba(255, 234, 0, 0.85),
+    rgba(180, 0, 255, 0.85)
+    );
+}
+
+.wrapper{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100dvh;
+    max-width: 1400px;
+    margin: 0 auto;
+    background: rgba(0, 0, 0, 0.674);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    overflow: hidden;
+
+
+    border: 2px solid #dfdfdf;
+
+}
+
+.main__container_slider {
+    position: relative;
+    overflow: hidden;
+    width: 55%; 
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    border-radius: 16px;
+
+    background: linear-gradient(
+      135deg,
+      rgba(43, 43, 43, 0.81),
+      rgba(30, 20, 40, 0.85)
+    );
+
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+}
+
+.container__images {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    object-fit: contain; 
+    border-radius: 12px;
+    padding: 1rem;
+}
+
+.container__images img{
+    width: 90%;
+    height: 90%;
+    transform: scale(1.02);
+    transition: transform .35s ease;
+    object-fit: contain;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.container__images img:hover {
+    transform: none;
+}
+
+.left__container,
+.right__container {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  border-radius: 50%;
+  z-index: 1;
+
+  background: rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+
+   width: clamp(28px, 4vw, 40px);
+  height: clamp(28px, 8vw, 40px);
+  border: 1px solid rgba(255,255,255,.12);
+  
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.left__container:hover,
+.right__container:hover {
+  background: rgba(0, 0, 0, 0.45);
+  transform: translateY(-50%) scale(1.05);
+}
+
+.left__container {
+  left: 5px;
+}
+
+.right__container {
+  right: 5px;
+}
+
+.leftArrow_,
+.rightArrow_ {
+  pointer-events: none;
+}
+
+.info__container {
+  flex: 0 0 45%;
+  background: radial-gradient(
+    ellipse at top right,
+    rgba(45, 45, 50, 0.85),    
+    rgba(25, 25, 30, 0.92) 80% 
+  );
+
+  border-radius: 12px;
+  border: 2px solid #aa00ff;
+
+  padding: 2rem;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  
+
+  overflow-y: auto;
+  gap: 2rem;
+}
+
+.pub__info {
+  background: linear-gradient(135deg, #000000, #1a1a1a);
+  border: 2px solid #FFD700;
+  border-radius: 16px;
+  padding: 1.4rem;
+  text-align: center;
+  width: 100%;
+  height: auto;
+
+  cursor: pointer;
+  transition: all 0.3s ease;
+  
+  gap: 1.5rem;
+}
+
+.pub__info:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(255, 215, 0, 0.4);
+  background: rgb(0,0,0);
+}
+
+.titulo {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: clamp(1.5rem, 2vw, 2rem);
+  margin-bottom: 0.5rem;
+  color: #ffd900;
+  text-shadow: none;
+}
+
+.info {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: clamp(1.5rem, 2vw, 2rem);
+  margin-bottom: 0.5rem;
+  color: #ffffff;
+}
+
+
