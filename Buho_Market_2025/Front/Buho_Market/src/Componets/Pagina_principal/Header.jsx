@@ -21,7 +21,7 @@ function Header() {
             else{
                 console.log("no se encontro la funcion para cerrar sesion")
             }
-        }catch (error) {
+        }catch (error) {   
             console.log(error);
         }
     }
