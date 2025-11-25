@@ -5,16 +5,18 @@ import { useParams } from 'react-router-dom';
 import Card from '../Componets/Pagina_publicaciones/Publicacion_card';
 import Header from "../Componets/Pagina_principal/Header";
 import Footer from "../Componets/Pagina_principal/Footer";
+import { UserAuth } from "../context/AuthContext.jsx";
 
 export default function VerPublicaciones() {
 
     const { busqueda } = useParams();
+    const { user } = UserAuth();
      
     const [publicacionesId, setPublicacionesId] = useState([]);
 
     useEffect(() => {
         const publicByCategory = async() => {
-            let obCatId; /**para entender la logica comparando con lo anterior/ obID = obCatId*/
+            let obCatId;
 
             if(busqueda) {
                 if(busqueda === "Tecnología" || busqueda === "Literatura" || busqueda === "Accesorios"){
@@ -38,6 +40,16 @@ export default function VerPublicaciones() {
 
                     setPublicacionesId(puclicId.data || []);
                 }
+
+                else if(busqueda === "Ver-mis-publicaciones"){
+                    const misPublic = await supabase
+                    .from('publicaciones')
+                    .select('id')
+                    .eq('usuario_id', user.id);
+
+                    setPublicacionesId(misPublic.data || []);
+                }
+
                 else{
                     const puclicId = await supabase 
                     .from('publicaciones')

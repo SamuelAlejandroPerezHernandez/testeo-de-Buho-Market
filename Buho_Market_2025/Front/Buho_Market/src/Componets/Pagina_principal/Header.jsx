@@ -6,6 +6,11 @@ import { useState, useEffect, useRef } from 'react';
 
 function Header() {
     const { signout } = UserAuth();
+    const [user, setUser] = useState("usuario");
+    const [foto, setFoto] = useState("/Img/lines.png");
+    const [isOpen, setIsOpen] = useState(false);
+    const [inputOpen, setinputOpen] = useState(false);
+    const [buscar, setBuscar] = useState("");
 
     const CerrarSesion = async () => {
         try {
@@ -21,9 +26,7 @@ function Header() {
         }
     }
 
-    const [user, setUser] = useState("usuario");
-    const [foto, setFoto] = useState("/Img/lines.png");
-
+/*datos del usuario bors*/ 
     const usuario = async () => {
         const resultado = await supabase
         .auth
@@ -59,8 +62,8 @@ function Header() {
         usuario();
     }, []);
 
-    const [isOpen, setIsOpen] = useState(false);
-
+    
+/*abrirle y cerrarle el dropdown a la pagina bros*/
      useEffect(() => {
         const handleClickOutside = (event) => {
             if (isOpen && dropdownRef.current && !dropdownRef.current.contains(event.target)) {
@@ -106,7 +109,7 @@ function Header() {
 
 
     /*input*/ 
-    const [inputOpen, setinputOpen] = useState(false);
+    
 
     const openInput = () => {
         setinputOpen(!inputOpen)
@@ -135,7 +138,7 @@ function Header() {
 
     /*buscar*/
 
-    const [buscar, setBuscar] = useState("");
+    
 
     const enviarBusquefa = () => {
         const busquedaSinSpacio = buscar.trim();
@@ -219,7 +222,7 @@ function Header() {
                             <img className="nav__img" src="/Img/menu.png"/>
                         </div>
 
-                        <a className="nav_link" href="#">Categorías</a>
+                        <Link className="nav_link" to="/ver-publicaciones/Ver-mis-publicaciones">Ver mis publicaciones</Link>
                     </li>
                     <li className="nav_item">
                         <div className="imgContainer">

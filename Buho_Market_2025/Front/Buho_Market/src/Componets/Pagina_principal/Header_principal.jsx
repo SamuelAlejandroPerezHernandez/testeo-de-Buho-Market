@@ -6,6 +6,10 @@ import { useState, useEffect, useRef } from 'react';
 
 function HeaderP() {
     const { signout } = UserAuth();
+    const navigate = useNavigate();
+    const [userName, setUserName] = useState("usuario");
+    const [foto, setFoto] = useState("/Img/lines.png");
+    const [isOpen, setIsOpen] = useState(false);
 
     const CerrarSesion = async () => {
         try {
@@ -21,46 +25,43 @@ function HeaderP() {
         }
     }
 
-    const [user, setUser] = useState("usuario");
-    const [foto, setFoto] = useState("/Img/lines.png");
-
-    const usuario = async () => {
-        const resultado = await supabase
-        .auth
-        .getUser()
-
-        if(resultado.data !== null && resultado.data.user !==null) {
-            const info = resultado.data.user;
-            let nombreUsuario = 'nombre usuario';
-            let icono = "/Img/lines.png";
-
-            if(info.user_metadata && info.user_metadata.full_name){
-                nombreUsuario = info.user_metadata.full_name;
-            }
-            else if(info.email) {
-                const partes = info.email.split("@");
-                nombreUsuario = partes[0];
-            }
-
-            if(info.user_metadata && info.user_metadata.avatar_url){
-                icono = info.user_metadata.avatar_url;
-            }
-
-            setFoto(icono);
-            setUser(nombreUsuario);
-        }
-        else {
-            setUser('user Name');
-            setFoto("/Img/lines.png");
-        }
-    }
-
+/*datos del usuario bors*/ 
     useEffect(() => {
+        const usuario = async () => {
+            const resultado = await supabase
+            .auth
+            .getUser()
+
+            if(resultado.data !== null && resultado.data.user !==null) {
+                const info = resultado.data.user;
+                let nombreUsuario = 'nombre usuario';
+                let icono = "/Img/lines.png";
+
+                if(info.user_metadata && info.user_metadata.full_name){
+                    nombreUsuario = info.user_metadata.full_name;
+                }
+                else if(info.email) {
+                    const partes = info.email.split("@");
+                    nombreUsuario = partes[0];
+                }
+
+                if(info.user_metadata && info.user_metadata.avatar_url){
+                    icono = info.user_metadata.avatar_url;
+                }
+
+                setFoto(icono);
+                setUserName(nombreUsuario);
+            }
+            else {
+                setUserName('user Name');
+                setFoto("/Img/lines.png");
+            }
+        }
         usuario();
     }, []);
 
-    const [isOpen, setIsOpen] = useState(false);
 
+/*abrirle y cerrarle el dropdown a la pagina bros*/
      useEffect(() => {
         const handleClickOutside = (event) => {
             if (isOpen && dropdownRef.current && !dropdownRef.current.contains(event.target)) {
@@ -102,8 +103,8 @@ function HeaderP() {
         dropdownDisplay = 'drop__down';
     }
 
-    const navigate = useNavigate();
 
+/*navegar al incio bros*/
     const ir = () => {
         navigate('/')
     }
@@ -120,7 +121,7 @@ function HeaderP() {
                     style= {{ display: menuOpenDisplay }}
                     onClick={ DropDown }
                 />
-                <img className="menu__close" src="/Img/green lines2.png"
+                <img className="menu__close" src="/Img/purple lines.png"
                     style= {{ display: menuCloseDisplay }}
                     onClick={ DropDown }
                 />
@@ -133,7 +134,7 @@ function HeaderP() {
                 <div className="user__info">
 
                     <img className="user__foto" src = {foto}/>
-                    <h2 className="user__name">{user}</h2>
+                    <h2 className="user__name">{userName}</h2>
                     
                 </div>
                 <ul className="nav__list__item">
@@ -156,7 +157,7 @@ function HeaderP() {
                             <img className="nav__img" src="/Img/menu.png"/>
                         </div>
 
-                        <a className="nav_link" href="#">Categorías</a>
+                        <Link className="nav_link" to="/ver-publicaciones/Ver-mis-publicaciones">Ver mis publicaciones</Link>
                     </li>
                     <li className="nav_item">
                         <div className="imgContainer">

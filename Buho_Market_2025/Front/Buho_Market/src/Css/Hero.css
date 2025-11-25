@@ -3,7 +3,7 @@
     background-image: url("/Img/New_And_Last_Banner.png");
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: clamp(60%, 75%, 85%) center;
+    background-position: clamp(78%, 80%, 85%) center;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -46,7 +46,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 70%;
+    width: 55%;
 }
 
 .button_container button {
