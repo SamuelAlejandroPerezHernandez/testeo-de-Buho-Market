@@ -9,89 +9,60 @@
 }
 
 @media(max-width: 700px) {
-  .wrapper_publicacion {
-    padding: 1.2rem;
-    background-image: url("/Img/categorias_buhito.png");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-  }
-
   form {
     display: flex;
     flex-direction: column;
-    align-items: center;
     width: 100%;
     max-width: 500px;
-    background: rgba(0, 0, 0, 0.92);
-    padding: 1.8rem 1.4rem;
+    background: rgba(8, 5, 18, 0.94);
+    border: 2px solid #FFD700;
     border-radius: 20px;
+    padding: 1.8rem 1.4rem;
     box-shadow: 
-      0 8px 25px rgba(0, 0, 0, 0.6),
-      inset 0 0 12px rgba(255, 217, 0, 0.04);
-    border: 2px solid rgba(255, 217, 0, 0.25);
+      0 8px 25px rgba(0, 0, 0, 0.7),
+      inset 0 0 12px rgba(255, 215, 0, 0.1);
     position: relative;
     overflow: hidden;
   }
 
-  form::before {
-    content: "NUEVA PUBLICACIÓN";
-    font-family: "Bebas Neue", sans-serif;
-    font-size: clamp(1.6rem, 6vw, 2.2rem);
-    color: white;
-    margin-bottom: 1.4rem;
-    text-align: center;
-    text-shadow: 
-      0 0 6px rgba(255, 255, 255, 0.5),
-      0 0 10px rgba(255, 157, 0, 0.3);
-    display: block;
-  }
-
-  .files_wrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    min-height: 110px;
-    padding: 18px;
-    margin-bottom: 20px;
-    border: 2px dashed rgba(255, 217, 0, 0.35);
-    border-radius: 14px;
-    background: rgba(20, 20, 20, 0.7);
-    box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.5);
-    text-align: center;
-  }
-
-  input[type="text"],
-  input[type="number"],
+  /* INPUTS - Estilo Buho Market (móvil) */
+  .input-titulo,
+  .input-precio,
+  .input-descripcion,
+  .input_contact,
   select {
     width: 100%;
     padding: 14px 16px;
     margin-bottom: 18px;
-    border: 2px solid rgba(255, 217, 0, 0.25);
+    border: 2px solid #FFD700;
     border-radius: 12px;
-    font-family: "Press Start 2P", cursive;
+    font-family: 'Press Start 2P', cursive;
     font-size: 13px;
-    background: rgba(30, 30, 30, 0.8);
-    color: white;
+    background-color: rgb(238, 238, 238);
+    color: rgb(0, 0, 0);
     transition: all 0.25s ease;
-    box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.4);
   }
 
-  input[type="text"]:focus,
-  input[type="number"]:focus,
+  ::placeholder {
+    font-family: 'Press Start 2P', cursive;
+    color: #000;
+    opacity: 1;
+    font-size: 11px;
+  }
+
+  .input-titulo:focus,
+  .input-precio:focus,
+  .input-descripcion:focus,
+  .input_contact:focus,
   select:focus {
     outline: none;
-    border-color: rgba(255, 157, 0, 0.9);
-    box-shadow: 
-      inset 0 2px 8px rgba(0, 0, 0, 0.6),
-      0 0 0 3px rgba(255, 157, 0, 0.18);
+    box-shadow: 0 0 0 3px rgba(255, 215, 0, 0.4);
+    background-color: #fff;
   }
 
   select {
     appearance: none;
-    background-image: url("image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ffd700'%3e%3cpath d='M7 10l5 5 5-5z'/%3e%3c/svg%3e");
+    background-image: url("image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23000'%3e%3cpath d='M7 10l5 5 5-5z'/%3e%3c/svg%3e");
     background-repeat: no-repeat;
     background-position: right 1rem center;
     background-size: 1em;
@@ -99,81 +70,68 @@
     font-size: 12px;
   }
 
-  input[type="file"] {
+  /* FILE INPUT - Móvil */
+  .files_wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 100%;
-    padding: 14px;
-    border: 2px solid rgba(255, 217, 0, 0.25);
-    border-radius: 12px;
-    background: rgba(30, 30, 30, 0.8);
-    color: white;
-    font-family: "Press Start 2P", cursive;
-    font-size: 12px;
+    min-height: 110px;
+    padding: 18px;
+    margin-bottom: 20px;
+    border: 2px dashed #FFD700;
+    border-radius: 16px;
+    background-color: rgb(238, 238, 238);
+    position: relative;
     cursor: pointer;
   }
 
-  input[type="file"]::file-selector-button {
+  .input-imagenes {
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    position: absolute;
+    cursor: pointer;
+  }
+
+  .files_wrapper::before {
+    content: "📁 SELECCIONAR IMÁGENES";
     font-family: 'Press Start 2P', cursive;
-    background-color: rgb(0, 0, 0);
-    border: 2px solid rgb(255, 215, 0);
-    color: rgb(255, 255, 255);
-    padding: 8px 14px;
-    margin-right: 12px;
-    border-radius: 10px;
-    font-size: 11px;
-    cursor: pointer;
-    transition: all 0.25s ease;
+    color: #000;
+    font-size: 12px;
+    pointer-events: none;
   }
 
-  input[type="file"]::file-selector-button:hover {
-    background-color: rgb(255, 215, 0);
-    color: rgb(0, 0, 0);
-    transform: translateY(-1px);
-    box-shadow: 0 3px 8px rgba(255, 157, 0, 0.25);
-  }
-
+  /* BOTÓN - Estilo Buho Market (móvil) */
   button[type="submit"] {
     font-family: 'Press Start 2P', cursive;
     background-color: rgb(0, 0, 0); 
     border: 2px solid rgb(255, 215, 0); 
     color: rgb(255, 255, 255); 
-    font-size: 1.3em;
     font-weight: bold;
     padding: 10px 22px; 
     border-radius: 50px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
     transition: all 0.25s ease; 
-    margin-top: 14px;
     width: 100%;
     max-width: 300px;
+    font-size: 1.1rem;
+    margin: 16px auto 0;
+    display: block;
+    cursor: pointer;
   }
 
   button[type="submit"]:hover {
     background-color: rgb(255, 215, 0); 
     color: rgb(0, 0, 0); 
-    transform: scale(1.04); 
+    transform: scale(1.05); 
+    box-shadow: 
+      0 5px 12px rgba(255, 215, 0, 0.35),
+      0 0 12px rgba(255, 215, 0, 0.25);
   }
 
-  .small-preview {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
-    gap: 12px;
-    margin-top: 18px;
-    width: 100%;
-  }
-
-  .small-preview img {
-    width: 100%;
-    height: 60px;
-    object-fit: cover;
-    border-radius: 10px;
-    border: 2px solid rgba(255, 255, 255, 0.1);
-  }
-
-  ::placeholder {
-    color: #ffffff;
-    font-family: "Press Start 2P", cursive;
-    font-size: 11px;
-    opacity: 1;
+  button[type="submit"]:active {
+    transform: scale(1); 
   }
 }
 
@@ -195,135 +153,110 @@
   form {
     display: flex;
     flex-direction: column;
-    align-items: center;
     width: clamp(320px, 65%, 900px);
-    background: rgba(0, 0, 0, 0.85);
-    padding: 2.5rem;
+    background: rgba(8, 5, 18, 0.92);
+    border: 2px solid #FFD700;
     border-radius: 20px;
+    padding: 2.5rem;
     box-shadow: 
-      0 8px 25px rgba(0, 0, 0, 0.5),
-      inset 0 0 15px rgba(255, 217, 0, 0.05);
-    border: 2px solid rgba(255, 217, 0, 0.3);
+      0 8px 25px rgba(0, 0, 0, 0.7),
+      inset 0 0 15px rgba(255, 215, 0, 0.1);
     position: relative;
     overflow: hidden;
   }
 
-  .files_wrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    min-height: 120px;
-    padding: 20px;
-    margin-bottom: 22px;
-    border: 2px dashed rgba(255, 217, 0, 0.3);
-    border-radius: 16px;
-    background: rgba(20, 20, 20, 0.6);
-    box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.5);
-  }
-
-  form::before {
-    content: "NUEVA PUBLICACIÓN";
-    font-family: "Bebas Neue", sans-serif;
-    font-size: clamp(1.8rem, 3vw, 2.5rem);
-    color: white;
-    margin-bottom: 1.8rem;
-    text-align: center;
-    text-shadow: 
-      0 0 6px rgba(255, 255, 255, 0.4),
-      0 0 10px rgba(255, 157, 0, 0.3);
-    display: block;
-  }
-
-  input[type="text"],
-  input[type="number"],
+  /* INPUTS - Estilo Buho Market */
+  .input-titulo,
+  .input-precio,
+  .input-descripcion,
+  .input_contact,
   select {
     width: 100%;
     padding: 16px 20px;
     margin-bottom: 22px;
-    border: 2px solid rgba(255, 217, 0, 0.2);
+    border: 2px solid #FFD700;
     border-radius: 12px;
-    font-family: "Press Start 2P", cursive;
+    font-family: 'Press Start 2P', cursive;
     font-size: 14px;
-    background: rgba(30, 30, 30, 0.7);
-    color: white;
+    background-color: rgb(238, 238, 238);
+    color: rgb(0, 0, 0);
     transition: all 0.3s ease;
-    box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.4);
   }
 
-  input[type="text"]:focus,
-  input[type="number"]:focus,
+  ::placeholder {
+    font-family: 'Press Start 2P', cursive;
+    color: #000;
+    opacity: 1;
+    font-size: 12px;
+  }
+
+  .input-titulo:focus,
+  .input-precio:focus,
+  .input-descripcion:focus,
+  .input_contact:focus,
   select:focus {
     outline: none;
-    border-color: rgba(255, 157, 0, 0.8);
-    box-shadow: 
-      inset 0 2px 8px rgba(0, 0, 0, 0.6),
-      0 0 0 3px rgba(255, 157, 0, 0.2);
+    box-shadow: 0 0 0 3px rgba(255, 215, 0, 0.5);
+    background-color: #fff;
   }
 
   select {
     appearance: none;
-    background-image: url("image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ffd700'%3e%3cpath d='M7 10l5 5 5-5z'/%3e%3c/svg%3e");
+    background-image: url("image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23000'%3e%3cpath d='M7 10l5 5 5-5z'/%3e%3c/svg%3e");
     background-repeat: no-repeat;
     background-position: right 1.2rem center;
     background-size: 1.1em;
     padding-right: 3.2rem;
   }
 
-  input[type="file"] {
+  /* FILE INPUT */
+  .files_wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-height: 120px;
+    padding: 20px;
+    margin-bottom: 22px;
+    border: 2px dashed #FFD700;
+    border-radius: 16px;
+    background-color: rgb(238, 238, 238);
+    position: relative;
+    cursor: pointer;
+  }
+
+  .input-imagenes {
     width: 100%;
     height: 100%;
-    padding: 16px;
-    border: 2px solid rgba(255, 217, 0, 0.2);
-    border-radius: 12px;
-    background: rgba(30, 30, 30, 0.7);
-    color: white;
-    font-family: "Press Start 2P", cursive;
-    font-size: 14px;
+    opacity: 0;
+    position: absolute;
     cursor: pointer;
-    box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.4);
   }
 
-  input[type="file"]::file-selector-button {
+  .files_wrapper::before {
+    content: "📁 SELECCIONAR IMÁGENES";
     font-family: 'Press Start 2P', cursive;
-    background-color: rgb(0, 0, 0);
-    border: 2px solid rgb(255, 215, 0);
-    color: rgb(255, 255, 255);
-    padding: 10px 18px;
-    margin-right: 14px;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
+    color: #000;
+    font-size: 14px;
+    pointer-events: none;
   }
 
-  input[type="file"]::file-selector-button::before {
-    content: "📁";
-    font-size: 1.2em;
-  }
-
-  input[type="file"]::file-selector-button:hover {
-    background-color: rgb(255, 215, 0);
-    color: rgb(0, 0, 0);
-    transform: translateY(-2px);
-    box-shadow: 0 4px 10px rgba(255, 157, 0, 0.2);
-  }
-
+  /* BOTÓN - Estilo Buho Market ÉPICO */
   button[type="submit"] {
     font-family: 'Press Start 2P', cursive;
     background-color: rgb(0, 0, 0); 
     border: 2px solid rgb(255, 215, 0); 
     color: rgb(255, 255, 255); 
-    font-size: 1.5em;
     font-weight: bold;
     padding: 12px 25px; 
     border-radius: 50px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
-    transition: background-color 0.3s, transform 0.3s; 
-    margin-top: 15px;
+    transition: all 0.3s ease; 
+    width: 100%;
+    max-width: 300px;
+    font-size: 1.3rem;
+    margin: 20px auto 0;
+    display: block;
     cursor: pointer;
   }
 
@@ -331,39 +264,12 @@
     background-color: rgb(255, 215, 0); 
     color: rgb(0, 0, 0); 
     transform: scale(1.1); 
+    box-shadow: 
+      0 6px 15px rgba(255, 215, 0, 0.4),
+      0 0 15px rgba(255, 215, 0, 0.3);
   }
-      
+
   button[type="submit"]:active {
     transform: scale(1); 
-  }
-
-  .small-preview {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
-    gap: 14px;
-    margin-top: 20px;
-    width: 100%;
-  }
-
-  .small-preview img {
-    width: 100%;
-    height: 80px;
-    object-fit: cover;
-    border-radius: 12px;
-    border: 2px solid rgba(255, 255, 255, 0.1);
-    transition: all 0.25s ease;
-  }
-
-  .small-preview img:hover {
-    transform: scale(1.08);
-    border-color: rgba(255, 217, 0, 0.6);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-  }
-
-  ::placeholder {
-    color: #ffffff;
-    font-family: "Press Start 2P", cursive;
-    font-size: 12px;
-    opacity: 1;
   }
 }

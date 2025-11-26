@@ -4,17 +4,17 @@
     background-image: url("/Img/New_And_Last_Banner.png");
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: 90% center; /* más a la derecha, estable en móvil */
+    background-position: 90% center; 
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
     color: rgb(255, 255, 255);
     width: 100%;
-    height: 88vh; /* menos altura para evitar scroll */
-    padding: 0 6%; /* padding horizontal simétrico */
+    height: 88vh; 
+    padding: 0 6%; 
     overflow-x: hidden;
-    text-align: left; /* mejor legibilidad */
+    text-align: left; 
   }
 
   .heroWrapper {
@@ -23,17 +23,22 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center;
     gap: 1rem;
   }
 
   #hero h1 {
     font-family: "Bebas Neue", sans-serif;
-    font-size: clamp(1.8rem, 9vw, 2.6rem); /* más pequeño y adaptable */
+    font-size: clamp(1.8rem, 9vw, 2.6rem); 
     line-height: 1.2;
     margin: 0;
     padding: 0;
     color: rgb(255, 255, 255);
+    text-shadow: 
+    -1.5px -1.5px 0 #000,
+     1.5px -1.5px 0 #000,
+    -1.5px  1.5px 0 #000,
+     1.5px  1.5px 0 #000;
   }
 
   #hero span {
@@ -45,11 +50,16 @@
       0 0 12px rgba(255, 255, 255, 0.1);
     display: block;
     margin-top: 0.2rem;
+    text-shadow: 
+    -1.5px -1.5px 0 #000,
+     1.5px -1.5px 0 #000,
+    -1.5px  1.5px 0 #000,
+     1.5px  1.5px 0 #000;
   }
 
   .button_container {
     display: flex;
-    justify-content: flex-start; /* alinea con el texto */
+    justify-content: flex-start;
     width: 100%;
     margin-top: 0.8rem;
   }
@@ -85,6 +95,10 @@
     display: block;
   }
 }
+
+
+
+
 
 
 @media(max-width: 900px) and (min-width: 700px){

@@ -72,6 +72,10 @@
     font-size: 1.7rem;  
     padding: 1.5%;
     font-size: 1.15rem; 
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
 }
 
 .search__icon__container{
@@ -84,9 +88,10 @@
 }
 
 .input__search::placeholder{
+    font-family: 'Press Start 2P', cursive;
     color: rgb(0, 0, 0);
-    font-size: 1.15rem;  
-    margin-bottom: 5%;
+    font-size: 1rem;  
+
 }
 
 .menu{
@@ -247,12 +252,6 @@
 }
 
 
-
-
-
-
-
-
 @media(min-width: 700px){
 
 .web__header{
@@ -277,7 +276,7 @@
     height: auto;
     margin-top: 0;
     padding-top: 0;
-    padding-left: 2.5%;
+    padding-left: clamp(37px, 2.5%, 40px);
 }
 
 .web__logo{
@@ -315,7 +314,7 @@
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    width: clamp(180px, 80%, 800px);
+    width: clamp(18px, 70%, 600px);
     height: 40px; 
     padding-bottom: 0;
 }
@@ -341,6 +340,8 @@
     font-size: 1.7rem;  
     padding: 1.5%;
     font-size: 1.15rem; 
+    border-top-left-radius: 12px;
+    border-bottom-left-radius: 12px;
 }
 
 .search__icon__container{
@@ -367,6 +368,7 @@
 }
 
 .input__search::placeholder{
+    font-family: 'Press Start 2P', cursive;
     color: rgb(0, 0, 0);
     font-size: 1.15rem;  
     margin-bottom: 5%;
