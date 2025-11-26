@@ -1,14 +1,18 @@
 .informacion__background {
-  background-image: url('../img/feather-background.png');
-  background-size: 200px 200px;
+  background-image: 
+  url('../Img/back_coin.png');  
+  background-size: cover; /* ← ¡Aumenta el tamaño del tile! */
   background-position: center;
-  background-repeat: repeat;
+  background-repeat: no-repeat;
   background-attachment: fixed;
   background-color: rgba(0, 0, 0, 0.8);
   min-height: 100vh;
   width: 100%;
   color: #ffffff;
+  
 }
+
+
 
 /* Contenido centrado */
 .informacion__content {
