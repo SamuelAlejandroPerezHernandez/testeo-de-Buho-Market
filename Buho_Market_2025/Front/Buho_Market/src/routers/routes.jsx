@@ -10,6 +10,9 @@ import Informacion from '../Pages/Informacion.jsx';
 import NotFound from '../Pages/NotFound.jsx';
 import PublicacionCompleta from '../Pages/PublicacionCompleta.jsx';
 
+import PrevEditMisPubs from '../Pages/verPrevPublicaciones.jsx';
+import EditandoPubs from '../Pages/PageEditarPub.jsx';
+
 export default function MyRoutes() {
   return (
     <Routes>
@@ -24,6 +27,11 @@ export default function MyRoutes() {
       <Route path="/informacion" element={<Informacion />} />
       <Route path= "/ampliar/:id" element={<PublicacionCompleta/>}/>
       <Route path= "*" element={<NotFound/>}></Route>
+
+
+    <Route path= "/Editar/:idPub" element={<EditandoPubs/>}/>
+    <Route path="/PrevEditMisPubs/:editar" element={<PrevEditMisPubs/>}/>
+
     </Routes>
   );
 }

@@ -5,7 +5,7 @@ import './index.css'
 import App from './App.jsx'
 /*import './Css/HomeStyle.css'; */
 import './Css/Publicaciones.css';
-import './Css/Card.css';
+
 import './Css/VerPaginas.css';
 import './Css/Ampliar.css';
 

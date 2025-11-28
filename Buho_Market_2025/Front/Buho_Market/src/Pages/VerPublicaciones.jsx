@@ -6,6 +6,7 @@ import Card from '../Componets/Pagina_publicaciones/Publicacion_card';
 import Header from "../Componets/Pagina_principal/Header";
 import Footer from "../Componets/Pagina_principal/Footer";
 import { UserAuth } from "../context/AuthContext.jsx";
+import '../Css/Card.css';
 
 export default function VerPublicaciones() {
 
@@ -83,3 +84,4 @@ export default function VerPublicaciones() {
         </div>
     );
 }
+ 
