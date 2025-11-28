@@ -87,7 +87,7 @@ function PrevEdit({publicacionId}) {
     }
 
     return(
-        <div className="main__container">
+        <div className="main__container modo-edicion">
                 <div className="slider-container">
 
                     {imagenes.length > 1 && (

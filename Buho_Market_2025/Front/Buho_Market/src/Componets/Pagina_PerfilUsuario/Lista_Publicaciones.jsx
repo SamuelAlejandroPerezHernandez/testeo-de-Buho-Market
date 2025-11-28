@@ -33,8 +33,9 @@ export default function Lista_Publicaciones({ publicaciones, formatDate }) {
                   {pub.estado || 'Disponible'}
                 </span>
                 <div className="acciones-publicacion">
-                  <button>Editar</button>
-                  <button>Eliminar</button>
+                  <button onClick={() => navigate(`/Editar/${(pub.id)}`)}>
+                  Editar
+                  </button>
                 </div>
               </div>
             </div>

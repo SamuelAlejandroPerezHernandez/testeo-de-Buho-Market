@@ -1,0 +1,128 @@
+
+.edicion__contenedor-principal {
+  width: 100% !important;
+  height: 100% !important;
+  background-image:
+  url('../Img/buho_editar.png') !important;
+  background-size: cover !important;        
+  background-position: center !important; 
+  background-repeat: no-repeat !important;
+  display: flex !important;
+  align-items: flex-start !important;
+  padding: 2rem 1rem !important;
+}
+
+.edicion__formulario {
+  display: flex !important;
+  flex-direction: column !important;
+  width: 100% !important;
+  max-width: 650px !important;
+  background: rgba(10, 8, 20, 0.37) !important;
+  border: 2px solid #bb86fc !important;
+  border-radius: 20px !important;
+  padding: 2rem !important;
+  box-shadow:
+    0 8px 25px rgba(0, 0, 0, 0.7) ,
+    inset 0 0 12px rgba(187, 134, 252, 0.2) !important;
+  position: relative !important;
+  overflow: hidden !important;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
+}
+
+.edicion__contenedor-archivos {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  width: 100% !important;
+  min-height: 110px !important;
+  padding: 18px !important;
+  margin-bottom: 20px !important;
+  border: 2px dashed #bb86fc !important;
+  border-radius: 16px !important;
+  background-color: #1a1a1a !important;
+  position: relative !important;
+  cursor: pointer !important;
+}
+
+.edicion__input-archivos {
+  width: 100% !important;
+  height: 100% !important;
+  opacity: 0 !important;
+  position: absolute !important;
+  cursor: pointer !important;
+}
+
+.edicion__contenedor-archivos::before {
+  content: "📁 SELECCIONAR 5 IMÁGENES" !important;
+  color: #e0b0ff !important;
+  font-size: 16px !important;
+  pointer-events: none !important;
+}
+
+.edicion__contenedor-campos {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 20px !important;
+}
+
+.edicion__input-titulo,
+.edicion__input-precio,
+.edicion__input-descripcion,
+.edicion__input-contacto,
+.edicion__select-categoria {
+  width: 100% !important;
+  padding: 14px 16px !important;
+  border: 2px solid #bb86fc !important;
+  border-radius: 12px !important;
+  font-size: 16px !important;
+  background-color: #1a1a1a !important;
+  color: #fff !important;
+  transition: all 0.25s ease !important;
+}
+
+::placeholder {
+  color: #aaa !important;
+  font-size: 14px !important;
+}
+
+.edicion__input-titulo:focus,
+.edicion__input-precio:focus,
+.edicion__input-descripcion:focus,
+.edicion__input-contacto:focus,
+.edicion__select-categoria:focus {
+  outline: none !important;
+  box-shadow: 0 0 0 3px rgba(187, 134, 252, 0.4) !important;
+  background-color: #222 !important;
+}
+
+.edicion__select-categoria {
+  appearance: none !important;
+  background-image: url("image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23bb86fc'%3e%3cpath d='M7 10l5 5 5-5z'/%3e%3c/svg%3e") !important;
+  background-repeat: no-repeat !important;
+  background-position: right 1.2rem center !important;
+  background-size: 16px !important;
+  padding-right: 40px !important;
+}
+
+.edicion__btn-actualizar {
+  background-color: #9c27b0 !important;
+  color: white !important;
+  border: none !important;
+  font-weight: bold !important;
+  padding: 14px 24px !important;
+  border-radius: 12px !important;
+  box-shadow: 0 4px 12px rgba(156, 39, 176, 0.3) !important;
+  transition: all 0.25s ease !important;
+  width: 100% !important;
+  max-width: 300px !important;
+  font-size: 1.2rem !important;
+  margin: 10px auto 0 !important;
+  cursor: pointer !important;
+  font-family: inherit !important;
+}
+
+.edicion__btn-actualizar:hover {
+  background-color: #7b1fa2 !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 6px 16px rgba(156, 39, 176, 0.4) !important;
+}
