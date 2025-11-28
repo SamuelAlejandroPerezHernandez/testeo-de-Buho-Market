@@ -59,6 +59,17 @@ function Editando() {
     const handleSubmit = async (e) => {
         e.preventDefault();
 
+        if(!titulo || !categoriaId || !precio || !contacto){
+            alert("debe completar todos los campos antes de publicar");
+            return;
+        }
+
+        if(imagenes.length !== 5){
+            alert("debe ingresar 5 imagenes antes de publicar");
+            console.log('Cantidad de imágenes:', imagenes.length);
+            return;
+        }
+
         try{
             const insertarData = async() => {
                 const insrtarSB = await supabase
@@ -107,7 +118,7 @@ function Editando() {
                     })
                 }
 
-                alert("¡Publicación creada exitosamente!");
+                alert("Actualizacion exitosamente!");
 
                 setTitulo('');
                 setCategoriaId('');

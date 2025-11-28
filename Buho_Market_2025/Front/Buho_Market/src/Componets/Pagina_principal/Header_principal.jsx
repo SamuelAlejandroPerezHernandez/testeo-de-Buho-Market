@@ -161,6 +161,13 @@ function HeaderP() {
                     </li>
                     <li className="nav_item">
                         <div className="imgContainer">
+                            <img className="nav__img" src="/Img/menu.png"/>
+                        </div>
+
+                        <Link className="nav_link" to="/PrevEditMisPubs/editar_mis_publicaciones">Editar publicaciones</Link>
+                    </li>
+                    <li className="nav_item">
+                        <div className="imgContainer">
                             <img className="nav__img" src="/Img/subir.png"/>
                         </div>
 
